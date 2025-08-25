@@ -1,11 +1,13 @@
+/* Base styles (mobile-first approach) */
 body {
     font-family: Arial, sans-serif;
-    margin: 50px;
-    padding: 20px;
-    max-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 100%;
     text-align: center;
     background-color: #b8b1b1;
-    color: #fcfefc;  
+    color: #fcfefc;
+    font-size: 1rem;
 }
 
 .container {
@@ -14,14 +16,19 @@ body {
     align-items: center;
     gap: 20px;
     background-color: #090909;
-    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
+
 h1 {
-    font-size: 24px;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
+
 input, select, button {
     padding: 10px;
     font-size: 16px;
@@ -30,15 +37,99 @@ input, select, button {
     border-radius: 5px;
     margin: 10px 0;
 }
+
 button {
     background-color: #28a745;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #218838;
 }
+
 input, select {
     border: 1px solid #ccc;
+}
+
+.converter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+/* Medium screens (tablets/laptops) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        max-width: 700px;
+        padding: 2em;
+    }
+
+    input, select, button {
+        max-width: 350px;
+        font-size: 18px;
+    }
+
+    .converter {
+        justify-content: flex-start;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    body {
+        margin: 40px auto;
+        padding: 40px;
+        max-width: 1000px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 3em;
+    }
+
+    input, select, button {
+        max-width: 400px;
+        font-size: 20px;
+    }
+
+    .converter {
+        justify-content: flex-start;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .converter {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    input, select, button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
